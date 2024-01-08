@@ -46,7 +46,7 @@ public class VW extends Canvas implements Runnable, ActionListener {
     }
     //To do
 
-    public void paint(int x, int y) {
+    public synchronized void paint(int x, int y) {
         if (this.bs == null) {
             System.out.println("kgd");
             this.createBufferStrategy(2);
@@ -65,7 +65,7 @@ public class VW extends Canvas implements Runnable, ActionListener {
 
     private void loadBackground() {
         try {
-            this.backgroundImg = ImageIO.read(new File("C:\\Users\\Usuario\\Pictures\\Camera Roll\\Fotos\\DiagramaDeClasesGranja.jpg"));
+            this.backgroundImg = ImageIO.read(new File(""));
             System.out.println("Background loaded :-)");
             System.out.println("Width: " + this.backgroundImg.getWidth());
             System.out.println("Height: " + this.backgroundImg.getHeight());
@@ -81,7 +81,7 @@ public class VW extends Canvas implements Runnable, ActionListener {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    void delete(int x, int y) {
+    public synchronized void delete(int x, int y) {
         if (this.bs == null) {
             System.out.println("kgd");
             this.createBufferStrategy(2);

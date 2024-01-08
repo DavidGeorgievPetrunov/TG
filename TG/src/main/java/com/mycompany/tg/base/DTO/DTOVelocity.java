@@ -2,8 +2,8 @@ package com.mycompany.tg.base.DTO;
 
 public class DTOVelocity {
 
-    float velocityX = 10;
-    float velocityY = 0;
+    float velocityX = 5;
+    float velocityY = 5;
     float maxVelocity = 10;
 
     public float getVelocityX() {

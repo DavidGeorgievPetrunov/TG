@@ -31,7 +31,7 @@ public class Balls implements VO, Runnable {
         while (times < 300) {
             times += 1;
             try {
-                sleep(10);
+                sleep(32);
             } catch (InterruptedException ex) {
                 Logger.getLogger(Balls.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -58,15 +58,26 @@ public class Balls implements VO, Runnable {
         this.position.setPosY(y2);
 
         this.model.controller.delete(x, y);
-        if (x2 > this.model.controller.getVWXSize() || x2 < 0 || y2 < 0 || y2 > this.model.controller.getVMYSize()) {
-            bounce();
+        if (x2 > this.model.controller.getVWXSize() || x2 < 0) {
+            bounceX();
+        }
+        if (y2 < 0 || y2 > this.model.controller.getVMYSize()) {
+            bounceY();
         }
         this.model.controller.paint(x2, y2);
 
     }
 
-    public void bounce() {
-        this.velocity.setVelocityX(-this.velocity.getVelocityX());
+//    public void bounce() {
+//        this.velocity.setVelocityX(-this.velocity.getVelocityX());
+//        this.velocity.setVelocityY(-this.velocity.getVelocityY());
+//    }
+
+    private void bounceY() {
         this.velocity.setVelocityY(-this.velocity.getVelocityY());
+    }
+
+    private void bounceX() {
+        this.velocity.setVelocityX(-this.velocity.getVelocityX());
     }
 }

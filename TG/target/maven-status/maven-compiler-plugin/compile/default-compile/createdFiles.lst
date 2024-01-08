@@ -8,6 +8,7 @@ com\mycompany\tg\SC.class
 com\mycompany\tg\Socket.class
 com\mycompany\tg\base\DTO\DTOPosition.class
 com\mycompany\tg\base\VO.class
+com\mycompany\tg\base\VW$1.class
 com\mycompany\tg\CC.class
 com\mycompany\tg\TGPCT.class
 com\mycompany\tg\base\CP.class
